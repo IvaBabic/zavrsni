@@ -23,13 +23,25 @@
 <?php
     include('header.php');
     include('sidebar.php')
-    include('footer.php');
+
 ?>  
+
+<?php
+  $sql = "SELECT * FROM posts";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $statement->setFetchMode(PDO::FETCH_ASSOC);
+  $posts = $statement->fetchAll();
+
+
+  ?>
+
 <main role="main" class="container">
 
 <div class="row">
 
     <div class="col-sm-8 blog-main">
+   
 
         <div class="blog-post">
             <h2 class="blog-post-title"><a class="headline" href="#">Sample blog post</a></h2>
