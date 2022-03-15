@@ -23,7 +23,9 @@
 <body>
   <?php
     include('header.php');
-    include('sidebar.php')
+    include('sidebar.php');  
+   
+    
 
   ?>  
 
@@ -39,8 +41,8 @@
 
 <main role="main" class="container">
 
-<?php
-               foreach($posts as $post) {
+           <?php
+            foreach($posts as $post) {
             ?>
                 <h2 class="blog-post-title"><a class="headline" href="#"> <?php echo $post['title']; ?></a></h2>
                 <p class="blog-post-meta"><?php echo $post['created_at'] ?> by <a href="#"> <?php echo $post['author'] ?></a></p>
@@ -49,9 +51,14 @@
                }
             ?>
 
+
+
 <div class="row">
+         
 
     <div class="col-sm-8 blog-main">
+
+        
    
 
         <div class="blog-post">
@@ -74,8 +81,9 @@
     </main><!-- /.container -->
 
     <?php
-       
+    
     include('footer.php');
+    
    ?>  
 </body>
 </html>

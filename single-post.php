@@ -20,10 +20,14 @@
 <body>
 <?php
     include('header.php');
-    include('sidebar.php')
+    include('sidebar.php');
     include('footer.php');
 ?>  
 
 
+<?php
+   
+    include('footer.php');
+?>  
 </body>
 </html>
