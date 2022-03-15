@@ -1,3 +1,5 @@
+<?php include_once('db.php') ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,14 +17,27 @@
 
     <!-- Custom styles for this template -->
     <link href="styles/blog.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 </head>
 
 <body>
 <?php
     include('header.php');
     include('sidebar.php');
-    include('footer.php');
+    
+    if (isset($_GET['id'])) {
+        
+        $sql = "SELECT * FROM posts WHERE posts.id = {$_GET['id']}";
+        $statement = $connection->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $singlePost = $statement->fetch(); 
+    }
 ?>  
+
+                <h2 class="blog-post-title"> <?php echo $singlePost['title']; ?> </h2>
+                <p class="blog-post-meta"><?php echo $singlePost['created_at'] ?> by <a href="#"> <?php echo $singlePost['author'] ?></a></p>
+                <p> <?php echo $singlePost['body'] ?> </p>
 
 
 <?php
