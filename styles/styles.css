@@ -1,8 +1,8 @@
 
 
 
-html * {
-    font-size: 14px !important;
+body {
+    font-size: 14px;
 }
 
 
@@ -22,7 +22,8 @@ h6,
 }
 
 .headline {
-    color: #b34848;}
+    color: #b34848;
+}
 
  .blog-masthead {
     background-color: #b34848;

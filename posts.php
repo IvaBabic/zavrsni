@@ -23,10 +23,6 @@
 <body>
   <?php
     include('header.php');
-     
-   
-    
-
   ?>  
 
   <?php
@@ -40,20 +36,10 @@
   ?>
 
 <main role="main" class="container">
-
-           
-
-
-
-<div class="row">
-         
-
+  <div class="row">
     <div class="col-sm-8 blog-main">
+      <div class="blog-post">
 
-        
-   
-
-        <div class="blog-post">
         <?php
             foreach($posts as $post) {
             ?>
@@ -65,14 +51,9 @@
             ?>
            
 
-            
-        </div><!-- /.blog-post -->
+      </div><!-- /.blog-post -->
 
-        
-
-        
-
-        <nav class="blog-pagination">
+       <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
         </nav>
@@ -83,14 +64,13 @@
         include('sidebar.php');  
        ?>  
 
-     </div><!-- /.row -->
+  </div><!-- /.row -->
 
-    </main><!-- /.container -->
+</main><!-- /.container -->
 
     <?php
-    
     include('footer.php');
-    
-   ?>  
+    ?>  
+
 </body>
 </html>
