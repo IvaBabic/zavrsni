@@ -24,7 +24,7 @@
 <?php
   include('header.php');
 
-  $sql_authors = "SELECT CONCAT(first_name, ' ', last_name) as fullName, id FROM author;";
+  $sql_authors = "SELECT CONCAT(first_name, ' ', last_name) as fullName, id, gender FROM author;";
   $statement = $connection->prepare($sql_authors);
   $statement->execute();
   $statement->setFetchMode(PDO::FETCH_ASSOC);
@@ -86,7 +86,8 @@
          <option selected="selected">Choose one</option>
          <?php
           foreach($authors as $person) { ?>
-          <option value="<?= $person['id'] ?>"><?= $person['fullName'] ?></option>
+          <option <?php if($person['gender'] == 'male') { ?> style="color: blue" <?php } else {?> style="color:pink" <?php }?>
+            value="<?= $person['id'] ?>"><?= $person['fullName'] ?></option>
           <?php
            } ?>
       </select> 
